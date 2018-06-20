@@ -1,0 +1,45 @@
+{
+  "name": "rollup-plugin-dotenv",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/rollup-plugin-dotenv.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "precommit": "lint-staged",
+    "prebuild": "rimraf dist",
+    "build": "rollup -c",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andarist/rollup-plugin-dotenv.git"
+  },
+  "keywords": [
+    "rollup",
+    "dotenv"
+  ],
+  "author": "Mateusz Burzyński <mateuszburzynski@gmail.com> (https://github.com/Andarist)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andarist/rollup-plugin-dotenv/issues"
+  },
+  "homepage": "https://github.com/Andarist/rollup-plugin-dotenv#readme",
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.51",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.51",
+    "@babel/preset-env": "7.0.0-beta.51",
+    "builtin-modules": "^3.0.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.13.5",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.60.7",
+    "rollup-plugin-babel": "4.0.0-beta.5"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "rollup-plugin-replace": "^2.0.0"
+  }
+}
