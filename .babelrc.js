@@ -4,9 +4,13 @@ const loose = true
 
 module.exports = {
   presets: [
-    ['@babel/env', {
-      loose,
-      modules,
-    }],
+    [
+      '@babel/env',
+      {
+        loose,
+        modules,
+        targets: { node: 6 },
+      },
+    ],
   ],
 }
