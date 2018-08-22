@@ -12,7 +12,7 @@ const makeExternalPredicate = externalsArr => {
 
 export default {
   input: 'src/index.js',
-  output: { file: pkg.main, format: 'cjs' },
+  output: { file: pkg.main, format: 'cjs', exports: 'named' },
   external: makeExternalPredicate([
     ...builtinModules,
     ...Object.keys(pkg.dependencies || {}),
