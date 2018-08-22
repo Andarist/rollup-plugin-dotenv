@@ -10,6 +10,7 @@
     "precommit": "lint-staged",
     "prebuild": "rimraf dist",
     "build": "rollup -c",
+    "postbuild": "prettier --write dist/*",
     "prepare": "npm run build"
   },
   "repository": {
