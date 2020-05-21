@@ -16,7 +16,4 @@ export const pick = (props, obj) =>
     return acc
   }, {})
 
-export const pipe = (...funcs) =>
-  funcs.reduceRight((piped, next) => (...args) => piped(next(...args)))
-
 export const shallowMergeAll = objs => Object.assign({}, ...objs)

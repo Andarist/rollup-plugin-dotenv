@@ -13,4 +13,5 @@ module.exports = {
       },
     ],
   ],
+  plugins: ['macros'],
 }
