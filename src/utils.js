@@ -16,4 +16,4 @@ export const pick = (props, obj) =>
     return acc
   }, {})
 
-export const shallowMergeAll = objs => Object.assign({}, ...objs)
+export const shallowMergeAll = (objs) => Object.assign({}, ...objs)

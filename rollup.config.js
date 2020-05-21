@@ -1,13 +1,13 @@
-import babel from 'rollup-plugin-babel'
+import babel from '@rollup/plugin-babel'
 import builtinModules from 'builtin-modules'
 import pkg from './package.json'
 
-const makeExternalPredicate = externalsArr => {
+const makeExternalPredicate = (externalsArr) => {
   if (externalsArr.length === 0) {
     return () => false
   }
-  const externalPattern = new RegExp(`^(${ externalsArr.join('|') })($|/)`)
-  return id => externalPattern.test(id)
+  const externalPattern = new RegExp(`^(${externalsArr.join('|')})($|/)`)
+  return (id) => externalPattern.test(id)
 }
 
 export default {
@@ -18,5 +18,5 @@ export default {
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
   ]),
-  plugins: [babel()],
+  plugins: [babel({ babelHelpers: 'bundled' })],
 }
