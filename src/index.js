@@ -38,6 +38,7 @@ export default function dotenvPlugin(inputOptions) {
       )([
         `.env.${process.env[envKey]}.local`,
         `.env.${process.env[envKey]}`,
+        '.env.local',
         '.env',
       ]),
     ),
