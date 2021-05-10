@@ -5,17 +5,22 @@ import replace from '@rollup/plugin-replace'
 import pipe from 'pipeline.macro'
 import { mapKeys, mapValues, pick, shallowMergeAll } from './utils'
 
-const withDefaults = ({ cwd = '.', envKey = 'NODE_ENV' } = {}) => ({
+const withDefaults = ({
+  cwd = '.',
+  envKey = 'NODE_ENV',
+  preventAssignment = false,
+} = {}) => ({
   cwd: path.resolve(process.cwd(), cwd),
   envKey,
+  preventAssignment,
 })
 
 export default function dotenvPlugin(inputOptions) {
-  const { cwd, envKey } = withDefaults(inputOptions)
+  const { cwd, envKey, preventAssignment } = withDefaults(inputOptions)
 
   return {
-    ...replace(
-      pipe(
+    ...replace({
+      values: pipe(
         [
           `.env.${process.env[envKey]}.local`,
           `.env.${process.env[envKey]}`,
@@ -43,7 +48,9 @@ export default function dotenvPlugin(inputOptions) {
         (envVars) => mapKeys((key) => `process.env.${key}`, envVars),
         (envVars) => mapValues((value) => JSON.stringify(value), envVars),
       ),
-    ),
+      preventAssignment,
+    }),
+
     name: 'dotenv',
   }
 }
