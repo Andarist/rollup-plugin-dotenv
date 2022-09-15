@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@rollup/plugin-replace": "^4.0.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^16.0.2"
   },
   "peerDependencies": {
     "rollup": "^1.20.0 || ^2.0.0"
