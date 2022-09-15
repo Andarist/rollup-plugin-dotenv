@@ -43,7 +43,7 @@ export default function dotenvPlugin(inputOptions) {
         (envVars) => mapKeys((key) => `process.env.${key}`, envVars),
         (envVars) => mapValues((value) => JSON.stringify(value), envVars),
       ),
-      preventAssignment = false,
+      preventAssignment: false,
     }),
     name: 'dotenv',
   }
