@@ -9,7 +9,7 @@ module.exports = {
       {
         loose,
         modules,
-        targets: { node: 8 },
+        targets: { node: 14 },
       },
     ],
   ],
