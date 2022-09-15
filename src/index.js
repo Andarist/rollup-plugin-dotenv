@@ -14,8 +14,8 @@ export default function dotenvPlugin(inputOptions) {
   const { cwd, envKey } = withDefaults(inputOptions)
 
   return {
-    ...replace(
-      pipe(
+    ...replace({
+      values: pipe(
         [
           `.env.${process.env[envKey]}.local`,
           `.env.${process.env[envKey]}`,
@@ -43,7 +43,8 @@ export default function dotenvPlugin(inputOptions) {
         (envVars) => mapKeys((key) => `process.env.${key}`, envVars),
         (envVars) => mapValues((value) => JSON.stringify(value), envVars),
       ),
-    ),
+      preventAssignment = false,
+    }),
     name: 'dotenv',
   }
 }
