@@ -11,7 +11,7 @@
   },
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "postbuild": "prettier --write dist/*",
     "prepare": "npm run build"
   },
@@ -32,18 +32,18 @@
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
-    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-babel": "^6.0.0",
     "babel-plugin-macros": "^3.1.0",
     "builtin-modules": "^3.3.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.4",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "pipeline.macro": "^1.1.0",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.79.0"
+    "rollup": "^3.2.0"
   },
   "dependencies": {
-    "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-replace": "^5.0.0",
     "dotenv": "^16.0.2"
   },
   "peerDependencies": {
