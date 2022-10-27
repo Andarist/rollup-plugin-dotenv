@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-dotenv",
   "version": "0.4.0",
-  "description": "",
+  "description": "Rollup plugin that loads available .env files and replaces the defined variables with their values",
   "main": "dist/rollup-plugin-dotenv.js",
   "files": [
     "dist"
@@ -30,13 +30,12 @@
   },
   "homepage": "https://github.com/Andarist/rollup-plugin-dotenv#readme",
   "devDependencies": {
-    "@babel/core": "^7.19.1",
-    "@babel/preset-env": "^7.19.1",
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
     "@rollup/plugin-babel": "^6.0.2",
     "babel-plugin-macros": "^3.1.0",
-    "builtin-modules": "^3.3.0",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.4",
+    "lint-staged": "^13.0.3",
     "pipeline.macro": "^1.1.0",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
@@ -44,7 +43,7 @@
   },
   "dependencies": {
     "@rollup/plugin-replace": "^5.0.1",
-    "dotenv": "^16.0.2"
+    "dotenv": "^16.0.3"
   },
   "peerDependencies": {
     "rollup": "^1.20.0 || ^2.0.0 || ^3.0.0"
