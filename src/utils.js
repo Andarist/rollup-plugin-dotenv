@@ -1,19 +1,14 @@
 export const mapKeys = (mapper, obj) =>
-  Object.keys(obj).reduce((acc, key) => {
-    acc[mapper(key)] = obj[key]
-    return acc
-  }, {})
+  Object.fromEntries(
+    Object.entries(obj).map(([key, value]) => [mapper(key), value]),
+  )
 
 export const mapValues = (mapper, obj) =>
-  Object.keys(obj).reduce((acc, key) => {
-    acc[key] = mapper(obj[key])
-    return acc
-  }, {})
+  Object.fromEntries(
+    Object.entries(obj).map(([key, value]) => [key, mapper(value)]),
+  )
 
 export const pick = (props, obj) =>
-  props.reduce((acc, prop) => {
-    acc[prop] = obj[prop]
-    return acc
-  }, {})
+  Object.fromEntries(props.map((prop) => [prop, obj[prop]]))
 
 export const shallowMergeAll = (objs) => Object.assign({}, ...objs)
